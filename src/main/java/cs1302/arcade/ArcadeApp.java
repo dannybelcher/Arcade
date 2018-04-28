@@ -1,7 +1,6 @@
 package cs1302.arcade;
-
+import javafx.scene.control.Label;
 import java.util.Random;
-
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Group;
@@ -37,7 +36,9 @@ public class ArcadeApp extends Application {
 		
 		Image image = new Image("https://upload.wikimedia.org/wikipedia/en/8/8d/NES_Tetris_Box_Front.jpg");
 		Image image2 = new Image("https://upload.wikimedia.org/wikipedia/en/3/31/Minesweeper_XP.png");
-
+		Image image3 = new Image("http://gamerselite.com/wp-content/uploads/2017/12/BANNER_1900x430_Arcade._V294825537_-663x189.jpg");
+		
+		
 		
 		//sets up the MenuBar
 		MenuBar menuBar = new MenuBar();
@@ -63,24 +64,40 @@ public class ArcadeApp extends Application {
 		});
 		menuBar.getMenus().add(menu3);
 		
+		
+		ImageView imageView = new ImageView(image);
+		imageView.setFitHeight(300);
+		imageView.setFitWidth(200);
+		
+		ImageView imageView2 = new ImageView(image2);
+		imageView2.setFitHeight(300);
+		imageView2.setFitWidth(200);
+		
+		ImageView imageView3 = new ImageView(image3);
+		
 		Button tetris = new Button();
-		tetris.setGraphic(new ImageView(image));
+		tetris.setGraphic(imageView);
 		tetris.setOnAction(event ->{
 			//change to TetrisGame once working
 			TetrisRules.display();
 		});
 		Button minesweeper = new Button();
-		minesweeper.setGraphic(new ImageView(image2));
+		minesweeper.setGraphic(imageView2);
 		minesweeper.setOnAction(event ->{
 			//change to MinesweeperGame once working
 			MinesweeperRules.display();
 		});
 		
-		HBox gameSelect = new HBox(tetris, minesweeper);
-		gameSelect.setSpacing(100);
-		VBox root = new VBox(menuBar, gameSelect);
 		
-		Scene scene = new Scene(root, 640, 480);
+		HBox gameSelect = new HBox();
+		gameSelect.getChildren().addAll(tetris,minesweeper);
+		gameSelect.setSpacing(220);
+		VBox root = new VBox(menuBar, imageView3, gameSelect);
+		
+		root.setStyle("-fx-background-color:  #000000;");
+		
+		
+		Scene scene = new Scene(root, 660, 530);
 		stage.setTitle("cs1302-arcade!");
 		stage.setScene(scene);
 		stage.sizeToScene();
