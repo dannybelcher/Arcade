@@ -18,28 +18,26 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 
-public class MinesweeperRules {
+public class CheckersRules {
 	
 	public static void display() {
 		Stage window = new Stage();
-		Image image = new Image("https://upload.wikimedia.org/wikipedia/en/3/31/Minesweeper_XP.png");
+		Image image = new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Draughts.svg/220px-Draughts.svg.png");
 		ImageView imageView = new ImageView(image);
 		
 		window.initModality(Modality.APPLICATION_MODAL);
-		window.setTitle("Minesweeper Rules");
+		window.setTitle("Checkers Rules");
 		window.setMinWidth(400);
 		window.setMinHeight(400);
 		Label label = new Label();
 		label.setText("Rules provided via wikipedia.com");
 		String words = 
-		"The player is initially presented with a grid of undifferentiated squares. \n" +
-		"Some randomly selected squares are designated to contain mines. \n" +
-		"The game is played by revealing squares of the grid by clicking on each square. \n" +
-		"If a square containing a mine is revealed, the player loses the game. \n" +
-		"If no mine is revealed a digit is instead dispalyed in the square. \n" +
-		"This digit indicates how many adjacent squares contain mines. \n" +
-		"If no mines are adjacent, the square becomes blank, and all adjacent squares will be revealed. \n" + 
-		"When all mines have been located the game is won.";
+		"Each player stars with pieces on their side of the board \n" +
+		"A simple move consists of moving a piece one square diagonally. \n" +
+		"You can move pieces forward only. \n" +
+		"A jump consists of moving a piece over the oposing players piece. \n" +
+		"After you jump a piece you remove the jumped piece from the board. \n" +
+		"The player who loses all their pieces first loses the game.";
 		
 				
 				
