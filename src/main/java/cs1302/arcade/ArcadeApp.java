@@ -36,8 +36,11 @@ public class ArcadeApp extends Application {
 			 Platform.runLater(new Runnable() {
 			       public void run()
 			       {
+			    	   try{
 			           new CheckersApp().start(new Stage());
-			       }       
+			    	   }
+			    	   catch(Exception e){}
+			    	   }       
 			      								});
 		});
 	
