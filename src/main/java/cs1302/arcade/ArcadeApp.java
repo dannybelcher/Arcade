@@ -30,7 +30,7 @@ public class ArcadeApp extends Application {
 			       }       
 			      								});
 		});
-	Button cbutton = new Button("Tetris");
+	Button cbutton = new Button("Checkers");
 	cbutton.setOnAction( e -> 
 		{
 			 Platform.runLater(new Runnable() {
